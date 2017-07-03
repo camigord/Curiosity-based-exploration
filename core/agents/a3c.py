@@ -2,6 +2,9 @@ from __future__ import absolute_import
 from __future__ import division
 import torch.multiprocessing as mp
 
+import torch
+import torch.optim as optim
+
 from utils.helpers import Experience
 from core.agents.a3cSingleProcess import A3CLearner, A3CEvaluator, A3CTester
 

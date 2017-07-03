@@ -63,7 +63,7 @@ class A3CSingleProcess(mp.Process):
 
     def _forward(self, state_vb):
         p_vb, v_vb, self.lstm_hidden_vb = self.model((state_vb, self.lstm_hidden_vb), icm = False)
-
+        		
         if self.training:
             action = p_vb.multinomial().data[0][0]
         else:
