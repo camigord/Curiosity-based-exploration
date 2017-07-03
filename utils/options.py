@@ -16,7 +16,7 @@ class Params(object):   # NOTE: shared across all modules
         self.verbose     = 0            # 0(warning) | 1(info) | 2(debug)
 
         # training signature
-        self.machine     = "desktop1"  # "machine_id"
+        self.machine     = "cpu1"  # "machine_id"
         self.timestamp   = "17072200"   # "yymmdd##"
         self.visdom_port = 8098
         # training configuration
@@ -28,7 +28,7 @@ class Params(object):   # NOTE: shared across all modules
         self.render      = False        # whether render the window from the original envs or not
         self.visualize   = True         # whether do online plotting and stuff or not
 
-        self.num_processes      = 3
+        self.num_processes      = 10
         self.hist_len           = 4
         self.hidden_dim         = 256
 
@@ -87,11 +87,11 @@ class AgentParams(Params):  # hyperparameters for drl agents
         # hyperparameters
         self.steps               = 20000000 # max #iterations
         self.gamma               = 0.99
-        self.clip_grad           = 40.
-        self.lr                  = 0.001
-        self.eval_freq           = 10       # NOTE: evaluation frequency in seconds
+        self.clip_grad           = 10.
+        self.lr                  = 0.0001
+        self.eval_freq           = 300     # NOTE: evaluation frequency in seconds
         self.eval_steps          = 2100    # Number of steps during testing. Each episode has a maximum of 2100 steps.
-        self.prog_freq           = self.eval_freq
+        self.prog_freq           = 120
         self.test_nepisodes      = 10
         self.rollout_steps       = 20       # max look-ahead steps in a single rollout
         self.tau                 = 1.
